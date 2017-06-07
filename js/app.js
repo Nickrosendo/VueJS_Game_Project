@@ -5,10 +5,17 @@ new Vue({
         mhp: 100
         
     },
+    mounted: function(){
+        var vm = this;
+        setInterval(function(){
+           vm.monster_attack(); 
+        }, 2500);
+        
+    },
     computed:{},
 
     methods: {
-
+        
 
         giveup: function(){
             this.php = 0;
@@ -47,14 +54,6 @@ new Vue({
                 this.php -= 20;
             }
         }
-    },
-    watch: {
-        mhp: function(){
-            var vm = this;
-            setInterval(function(){
-                vm.monster_attack();
-            }, 5000);
-            
-        }
+        
     }
 });
